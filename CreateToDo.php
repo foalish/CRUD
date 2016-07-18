@@ -1,3 +1,7 @@
+<?php      
+include('session.php');
+?>
+
 <HTML>
   <HEAD>
     <TITLE>CreateToDo</TITLE>

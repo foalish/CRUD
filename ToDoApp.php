@@ -1,5 +1,10 @@
+<?php      
+include('session.php');
+?>
+
 <?php
 include('SQLFunctions.php');
+$user_id = $_SESSION['user_id'];
 ?>
 <html>
 <!--The Style tag allows us to put some basic css shading and borders to make the table a little easier to look at. Table, th and td are elements of an html table.-->
@@ -23,7 +28,8 @@ include('SQLFunctions.php');
                 ,ToDoDescription
                 ,DATE_FORMAT(ToDueDate,'%m-%d-%Y')  
                 ,ToDoID
-          FROM ToDos;";  
+          FROM ToDos
+          WHERE User_ID = ".$user_id;
  /* echo '<br>sql :'.$sql.'<br>Comment this out, after testing<br><br>'; */
  
    /*Open the database connection based on config.php file settings*/

@@ -1,3 +1,7 @@
+<?php      
+include('session.php');
+?>
+
 <?php
 include('SQLFunctions.php');
 
@@ -6,12 +10,13 @@ if ( !empty($_POST)) {
   $tdTitle = $_POST['ToDoTitle'];
   $tdDate  = $_POST['ToDueDate'];
   $tdDescr = $_POST['ToDoDescription'];
+  $user_id = $_SESSION['user_ID'];
          
 /*Open the database connection based on config.php file settings*/
   $link = connectDB();
 
   /*Prepare the SQL INSERT Statement*/
-  $sql = "INSERT INTO ToDos (ToDoTitle, ToDoDescription, ToDueDate, EntryTS) VALUES ('".$tdTitle."','".$tdDescr."','".$tdDate."', NOW());";
+  $sql = "INSERT INTO ToDos (User_ID, ToDoTitle, ToDoDescription, ToDueDate, EntryTS) VALUES (".$user_id.",'".$tdTitle."','".$tdDescr."','".$tdDate."', NOW());";
   /*Insert values into the database*/
   if (mysqli_query($link, $sql)) {
   /*    echo "<br>New record created successfully";*/

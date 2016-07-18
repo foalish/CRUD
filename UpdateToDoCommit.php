@@ -1,4 +1,8 @@
 <?php      
+include('session.php');
+?>
+
+<?php      
 include('SQLFunctions.php');
 
 // If there is anything in the POST, store the data from the form into variables

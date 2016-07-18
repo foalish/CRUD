@@ -1,4 +1,8 @@
 <?php      
+include('session.php');
+?>
+
+<?php      
   include('SQLFunctions.php');
 
    /*The Read page ToDoApp.php is going to link to this page by sending an html form POST 
